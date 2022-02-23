@@ -223,7 +223,7 @@
     <Content Include="_Archive\OrginalContent\bootstrap-theme.min.css" />
     <Content Include="_Archive\OrginalContent\bootstrap.css" />
     <Content Include="_Archive\OrginalContent\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="Content\img\favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="_Archive\OrginalContent\Site.css" />
