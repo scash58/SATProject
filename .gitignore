@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs/SATProject/v15/Server/sqlite3
+
+# Prevent Sensitive data from being submitted
+/SATProject.UI.MVC/configs
