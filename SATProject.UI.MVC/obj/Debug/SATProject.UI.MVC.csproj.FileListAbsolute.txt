@@ -208,3 +208,6 @@ C:\Users\Student\Source\Repos\Efaith33\SATProject\SATProject.UI.MVC\obj\Debug\SA
 C:\Users\Student\Source\Repos\Efaith33\SATProject\SATProject.UI.MVC\obj\Debug\SATProject.UI.MVC.csproj.CopyComplete
 C:\Users\Student\Source\Repos\Efaith33\SATProject\SATProject.UI.MVC\obj\Debug\SATProject.UI.MVC.dll
 C:\Users\Student\Source\Repos\Efaith33\SATProject\SATProject.UI.MVC\obj\Debug\SATProject.UI.MVC.pdb
+C:\Users\Student\Documents\Visual Studio 2017\!CanvasDownloads\13_PMD\SATProject\SATProject.UI.MVC\bin\SATProject.DATA.EF.dll
+C:\Users\Student\Documents\Visual Studio 2017\!CanvasDownloads\13_PMD\SATProject\SATProject.UI.MVC\bin\SATProject.DATA.EF.pdb
+C:\Users\Student\Documents\Visual Studio 2017\!CanvasDownloads\13_PMD\SATProject\SATProject.UI.MVC\bin\SATProject.DATA.EF.dll.config
