@@ -4,7 +4,7 @@
     ViewBag.Title = $"{Model.FullName}" + " Details";
 }
 
-<div class="p-2">
+<div class="m-2">
     <div class="text-center">
         <h2>@ViewBag.Title</h2>
         <h4>Student</h4>
@@ -102,17 +102,14 @@
 
         </div>
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+        <div class="form-group row text-center">
 
-            <div class="form-group row text-center">
-                
-                <div>
-                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-                </div>
-
+            <div>
+                @Html.ActionLink("Edit", "Edit", null, new { id = Model.StudentId, @class = "btn btn-secondary" })
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
             </div>
-        }
+
+        </div>
+
     </div>
 </div>

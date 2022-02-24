@@ -1,66 +1,73 @@
 ﻿@model SATProject.DATA.EF.Course
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = $"{Model.CourseName} Details";
 }
 
-<h2>Details</h2>
+<div class="m-2">
+    <div class="text-center">
+        <h2>@ViewBag.Title</h2>
+        <h4>Course</h4>
+    </div>
 
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </dt>
+    <div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CourseName)
-        </dd>
+        <hr />
+        <div class="text-center">
+            <div>
+                <b>@Html.DisplayNameFor(model => model.CourseName)</b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseDescription)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.CourseName)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CourseDescription)
-        </dd>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.CourseDescription)</b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreditHours)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.CourseDescription)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreditHours)
-        </dd>
+            <div>
+                <b> @Html.DisplayNameFor(model => model.CreditHours)</b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Curriculum)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.CreditHours)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Curriculum)
-        </dd>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Curriculum)</b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.Curriculum)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.Notes)</b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.Notes)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.IsActive)</b>
+            </div>
 
-    </dl>
+            <div>
+                @Html.DisplayFor(model => model.IsActive)
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group row text-center">
+        <div>
+            @Html.ActionLink("Edit", "Edit",null, new { id = Model.CourseId, @class = "btn btn-secondary" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+         </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
