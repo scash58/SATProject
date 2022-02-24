@@ -24,7 +24,7 @@
     <Property Name="SCSID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Enrollments" Relationship="Self.FK_Enrollments_ScheduledClasses" FromRole="ScheduledClasses" ToRole="Enrollments" />
     <NavigationProperty Name="ScheduledClassStatus" Relationship="Self.FK_ScheduledClasses_ScheduledClassStatuses" FromRole="ScheduledClasses" ToRole="ScheduledClassStatuses" />
-    <NavigationProperty Name="Cours" Relationship="SATModel.FK_ScheduledClasses_Courses" FromRole="ScheduledClass" ToRole="Cours" />
+    <NavigationProperty Name="Course" Relationship="SATModel.FK_ScheduledClasses_Courses" FromRole="ScheduledClass" ToRole="Cours" />
   </EntityType>
   <EntityType Name="ScheduledClassStatus">
     <Key>

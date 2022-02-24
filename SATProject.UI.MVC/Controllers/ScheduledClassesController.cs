@@ -17,7 +17,7 @@ namespace SATProject.UI.MVC.Controllers
         // GET: ScheduledClasses
         public ActionResult Index()
         {
-            var scheduledClasses = db.ScheduledClasses.Include(s => s.ScheduledClassStatus).Include(s => s.Cours);
+            var scheduledClasses = db.ScheduledClasses.Include(s => s.ScheduledClassStatus).Include(s => s.Course);
             return View(scheduledClasses.ToList());
         }
 
