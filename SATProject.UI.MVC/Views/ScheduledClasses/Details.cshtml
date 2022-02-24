@@ -1,66 +1,83 @@
 ﻿@model SATProject.DATA.EF.ScheduledClass
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = $"{Model.Cours.CourseName} Details";
 }
 
-<h2>Details</h2>
+<div class="m-2">
+    <div class="text-center">
+        <h2>@ViewBag.Title</h2>
+        <h4>Scheduled Class</h4>
+    </div>
 
-<div>
-    <h4>ScheduledClass</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
+    <div>
 
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
+        <hr />
+        <div class="text-center">
+            <div>
+                <b>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </b>            
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.StartDate)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
+            <div>
+                <b>
+                    @Html.DisplayNameFor(model => model.EndDate)
+                </b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.InstructorName)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.EndDate)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.InstructorName)
-        </dd>
+            <div>
+                <b>
+                    @Html.DisplayNameFor(model => model.InstructorName)
+                </b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.InstructorName)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
+            <div>
+                <b>
+                    @Html.DisplayNameFor(model => model.Location)
+                </b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.Location)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ScheduledClassStatus.SCSName)
-        </dd>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)</b>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cours.CourseName)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.ScheduledClassStatus.SCSName)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cours.CourseName)
-        </dd>
+            <div>
+                <b>
+                    @Html.DisplayNameFor(model => model.Cours.CourseName)
+                </b>
+            </div>
 
-    </dl>
+            <div>
+                @Html.DisplayFor(model => model.Cours.CourseName)
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group row text-center">
+        <div>
+            @Html.ActionLink("Edit", "Edit", null, new { id = Model.CourseId, @class = "btn btn-secondary" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduledClassId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
