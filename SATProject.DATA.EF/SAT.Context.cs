@@ -30,6 +30,6 @@ namespace SATProject.DATA.EF
         public virtual DbSet<ScheduledClassStatus> ScheduledClassStatuses { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<StudentStatus> StudentStatuses { get; set; }
-        public virtual DbSet<Cours> Cours { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
     }
 }

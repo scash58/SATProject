@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SATProject.DATA.EF//.SATMetadata
 {
-    #region CoursMetaData
+    #region CourseMetaData
     
-    public class CoursMetaData
+    public class CourseMetaData
     {
         //public int CourseId { get; set; }
 
@@ -39,8 +39,8 @@ namespace SATProject.DATA.EF//.SATMetadata
         public bool IsActive { get; set; }
     }
 
-    [MetadataType(typeof(CoursMetaData))]
-    public partial class Cours { }
+    [MetadataType(typeof(CourseMetaData))]
+    public partial class Course { }
 
     #endregion
 
@@ -117,12 +117,15 @@ namespace SATProject.DATA.EF//.SATMetadata
         [StringLength(10, ErrorMessage = "* Value must be 10 characters or less.")]
         public string ZipCode { get; set; }
 
+
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         [StringLength(13, ErrorMessage = "* Value must be 13 characters or less.")]
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
 
         [Required]
         [StringLength(60, ErrorMessage = "* Value must be 60 characters or less.")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
@@ -149,7 +152,16 @@ namespace SATProject.DATA.EF//.SATMetadata
 
     public class StudentStatusMetaData
     {
+        //public int SSID { get; set; }
+        [Required]
+        [StringLength(30, ErrorMessage = "* Value must be 30 characters or less.")]
+        [Display(Name = "Student Status")]
+        public string SSName { get; set; }
 
+        [DisplayFormat(NullDisplayText = "[-N/A-]")]
+        [StringLength(250, ErrorMessage = "* Value must be 250 characters or less.")]
+        [Display(Name = "Description")]
+        public string SSDescription { get; set; }
     }
 
     #endregion
