@@ -1,0 +1,120 @@
+﻿@model SATProject.DATA.EF.Student
+
+@{
+    ViewBag.Title = "Delete " + $"{Model.FullName} ?";
+}
+
+<div class="p-2">
+    <div class="text-center">
+        <h2>@ViewBag.Title</h2>
+        <h4>Student</h4>
+    </div>
+
+
+    <div>
+        <hr />
+        <div class="row col-md-12 text-center">
+            <div class="col-md-6">
+                <div>
+                    <b>
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.FullName)
+                </div>
+
+                <div>
+                    <b>@Html.DisplayNameFor(model => model.Major)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.Major)
+                </div>
+
+                <div>
+                    <b>@Html.DisplayNameFor(model => model.Address)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.Address)
+                </div>
+
+                <div>
+                    <b>@Html.DisplayNameFor(model => model.City)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.City)
+                </div>
+
+                <div>
+                    <b> @Html.DisplayNameFor(model => model.State)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.State)
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div>
+                    <b> @Html.DisplayNameFor(model => model.ZipCode)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.ZipCode)
+                </div>
+
+                <div>
+                    <b>@Html.DisplayNameFor(model => model.Phone)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.Phone)
+                </div>
+
+                <div>
+                    <b> @Html.DisplayNameFor(model => model.Email)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.Email)
+                </div>
+
+                <div>
+                    <b> @Html.DisplayNameFor(model => model.PhotoUrl)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.PhotoUrl)
+                </div>
+
+                <div>
+                    <b>@Html.DisplayNameFor(model => model.StudentStatus.SSName)</b>
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => model.StudentStatus.SSName)
+                </div>
+            </div>
+
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group row text-center">
+            <div class="p-2">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+            <div>
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+
+        </div>
+        }
+    </div>
+</div>

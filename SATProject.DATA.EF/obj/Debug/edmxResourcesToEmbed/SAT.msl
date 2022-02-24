@@ -59,8 +59,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Cours">
-      <EntityTypeMapping TypeName="SATModel.Cours">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="SATModel.Course">
         <MappingFragment StoreEntitySet="Courses">
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="Notes" ColumnName="Notes" />

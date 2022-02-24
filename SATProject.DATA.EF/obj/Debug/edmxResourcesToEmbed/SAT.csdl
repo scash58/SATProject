@@ -132,13 +132,13 @@
       <End Role="StudentStatuses" EntitySet="StudentStatuses" />
       <End Role="Students" EntitySet="Students" />
     </AssociationSet>
-    <EntitySet Name="Cours" EntityType="SATModel.Cours" />
+    <EntitySet Name="Courses" EntityType="SATModel.Course" />
     <AssociationSet Name="FK_ScheduledClasses_Courses" Association="SATModel.FK_ScheduledClasses_Courses">
-      <End Role="Cours" EntitySet="Cours" />
+      <End Role="Cours" EntitySet="Courses" />
       <End Role="ScheduledClass" EntitySet="ScheduledClasses" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Cours">
+  <EntityType Name="Course">
     <Key>
       <PropertyRef Name="CourseId" />
     </Key>
@@ -152,7 +152,7 @@
     <NavigationProperty Name="ScheduledClasses" Relationship="SATModel.FK_ScheduledClasses_Courses" FromRole="Cours" ToRole="ScheduledClass" />
   </EntityType>
   <Association Name="FK_ScheduledClasses_Courses">
-    <End Type="SATModel.Cours" Role="Cours" Multiplicity="1" />
+    <End Type="SATModel.Course" Role="Cours" Multiplicity="1" />
     <End Type="SATModel.ScheduledClass" Role="ScheduledClass" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cours">
