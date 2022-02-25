@@ -52,17 +52,20 @@
                 <a href="@Url.Action("Index", "Home")" class="nav-item nav-link">Home</a>
                 <a href="@Url.Action("About", "Home")" class="nav-item nav-link">About</a>
 
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="@Url.Action("Index", "Students")" class="dropdown-item">Students</a>
-                        <a href="@Url.Action("Index", "Courses")" class="dropdown-item">Courses</a>
-                        <a href="@Url.Action("Index", "ScheduledClasses")" class="dropdown-item">Classes</a>
-                        <a href="@Url.Action("Index", "Enrollments")" class="dropdown-item">Enrollment</a>
-                        <a href="@Url.Action("Index", "StudentStatus")" class="dropdown-item">Student Status</a>
-
+                @if (User.IsInRole("Admin") || User.IsInRole("Scheduler"))
+                {
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu fade-down m-0">
+                            <a href="@Url.Action("Index", "Students")" class="dropdown-item">Students</a>
+                            <a href="@Url.Action("Index", "Courses")" class="dropdown-item">Courses</a>
+                            <a href="@Url.Action("Index", "ScheduledClasses")" class="dropdown-item">Classes</a>
+                            <a href="@Url.Action("Index", "Enrollments")" class="dropdown-item">Enrollment</a>
+                            <a href="@Url.Action("Index", "StudentStatus")" class="dropdown-item">Student Status</a>
+                        </div>
                     </div>
-                </div>
+                }
+
                 @if (User.IsInRole("Admin"))
                 {
                     <div class="nav-item dropdown">
