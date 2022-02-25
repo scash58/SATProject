@@ -10,6 +10,7 @@ using SATProject.DATA.EF;
 
 namespace SATProject.UI.MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class StudentStatusController : Controller
     {
         private SATEntities db = new SATEntities();

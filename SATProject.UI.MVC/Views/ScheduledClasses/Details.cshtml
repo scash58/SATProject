@@ -1,7 +1,7 @@
 ﻿@model SATProject.DATA.EF.ScheduledClass
 
 @{
-    ViewBag.Title = $"{Model.Cours.CourseName} Details";
+    ViewBag.Title = $"{Model.Course.CourseName} Details";
 }
 
 <div class="m-2">
@@ -64,19 +64,19 @@
 
             <div>
                 <b>
-                    @Html.DisplayNameFor(model => model.Cours.CourseName)
+                    @Html.DisplayNameFor(model => model.Course.CourseName)
                 </b>
             </div>
 
             <div>
-                @Html.DisplayFor(model => model.Cours.CourseName)
+                @Html.DisplayFor(model => model.Course.CourseName)
             </div>
 
         </div>
     </div>
     <div class="form-group row text-center">
         <div>
-            @Html.ActionLink("Edit", "Edit", null, new { id = Model.CourseId, @class = "btn btn-secondary" })
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduledClassId }, new { @class = "btn btn-secondary" })
             @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
         </div>
     </div>

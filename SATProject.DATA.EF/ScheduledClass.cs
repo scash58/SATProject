@@ -31,6 +31,6 @@ namespace SATProject.DATA.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ScheduledClassStatus ScheduledClassStatus { get; set; }
-        public virtual Course Cours { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

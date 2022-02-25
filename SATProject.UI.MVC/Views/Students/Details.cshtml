@@ -105,7 +105,7 @@
         <div class="form-group row text-center">
 
             <div>
-                @Html.ActionLink("Edit", "Edit", null, new { id = Model.StudentId, @class = "btn btn-secondary" })
+                @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }, new { @class = "btn btn-secondary" })
                 @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
             </div>
 

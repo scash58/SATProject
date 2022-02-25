@@ -1,34 +1,40 @@
 ﻿@model SATProject.DATA.EF.StudentStatus
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = $"{Model.SSName} Details";
 }
 
-<h2>Details</h2>
+<div class="m-2">
+    <div class="text-center">
+        <h2>@ViewBag.Title</h2>
+        <h4>StudentStatus</h4>
+    </div>
 
-<div>
-    <h4>StudentStatus</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SSName)
-        </dt>
+    <div>
+        <hr />
+        <div class="text-center">
+            <div>
+                @Html.DisplayNameFor(model => model.SSName)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.SSName)
-        </dd>
+            <div>
+                @Html.DisplayFor(model => model.SSName)
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SSDescription)
-        </dt>
+            <div>
+                @Html.DisplayNameFor(model => model.SSDescription)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.SSDescription)
-        </dd>
+            <div>
+                @Html.DisplayFor(model => model.SSDescription)
+            </div>
 
-    </dl>
+        </div>
+    </div>
+    <div class="form-group row text-center">
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.SSID }, new { @class = "btn btn-secondary" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SSID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

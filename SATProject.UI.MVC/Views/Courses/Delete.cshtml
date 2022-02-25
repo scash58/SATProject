@@ -1,7 +1,9 @@
 ﻿@model SATProject.DATA.EF.Course
 
 @{
-    ViewBag.Title = $"Delete {Model.CourseName}?";
+                /**/
+
+                ViewBag.Title = $"Delete {Model.CourseName}?";
 }
 
 <div class="m-2">
@@ -69,13 +71,13 @@
     {
         @Html.AntiForgeryToken()
 
-    <div class="form-group row text-center">
-        <div class="p-2">
-            <input type="submit" value="Delete" class="btn btn-danger" />
+        <div class="form-group row text-center">
+            <div class="p-2">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+            <div>
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            </div>
         </div>
-        <div>
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-        </div>
-    </div>
     }
 </div>

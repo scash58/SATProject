@@ -1,42 +1,48 @@
 ﻿@model SATProject.DATA.EF.Enrollment
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = $"Details {Model.Student.FullName} Details";
 }
 
-<h2>Details</h2>
+<div class="m-2">
+    <div class="text-center">
+        <h2>@ViewBag.Title</h2>
+        <h4>Enrollment</h4>
+    </div>
 
-<div>
-    <h4>Enrollment</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
-        </dt>
+    <div class="text-center">
+        <hr />
+        <div class="div-horizontal">
+            <div>
+                @Html.DisplayNameFor(model => model.EnrollmentDate)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.EnrollmentDate)
-        </dd>
+            <div>
+                @Html.DisplayFor(model => model.EnrollmentDate)
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ScheduledClass.InstructorName)
-        </dt>
+            <div>
+                @Html.DisplayNameFor(model => model.ScheduledClass.InstructorName)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ScheduledClass.InstructorName)
-        </dd>
+            <div>
+                @Html.DisplayFor(model => model.ScheduledClass.InstructorName)
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Student.FirstName)
-        </dt>
+            <div>
+                @Html.DisplayNameFor(model => model.Student.FirstName)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Student.FirstName)
-        </dd>
+            <div>
+                @Html.DisplayFor(model => model.Student.FirstName)
+            </div>
 
-    </dl>
+        </div>
+    </div>
+    <div class="form-group row text-center">
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.EnrollmentId }, new { @class = "btn btn-secondary" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EnrollmentId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
