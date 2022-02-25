@@ -1,9 +1,15 @@
-﻿<div class="container-fluid bg-primary py-5 mb-5 page-header">
+﻿@model SATProject.UI.MVC.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Contact SAT Learning";
+}
+
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <h1 class="display-3 text-white animated slideInDown">Contact</h1>
-                
+                <h1 class="display-3 text-white animated slideInDown">@ViewBag.Title</h1>
+
             </div>
         </div>
     </div>
@@ -55,37 +61,43 @@
                         tabindex="0"></iframe>
             </div>
             <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                <form>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                <label for="name">Your Name</label>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <fieldset>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control",  @placeholder = "Name" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder="Email" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </fieldset>
+                            </div>
+                            <div class="col-12">
+                                <fieldset>
+                                    @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", @placeholder="Subject" } })
+                                    @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                                </fieldset>
+                            </div>
+                            <div class="col-12">
+                                <fieldset>
+                                    @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", @placeholder="Message", @rows="4" } })
+                                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                                </fieldset>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                <label for="email">Your Email</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                <label for="subject">Subject</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                <label for="message">Message</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                }
             </div>
         </div>
     </div>
