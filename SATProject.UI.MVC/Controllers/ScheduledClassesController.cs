@@ -10,6 +10,7 @@ using SATProject.DATA.EF;
 
 namespace SATProject.UI.MVC.Controllers
 {
+    [Authorize]
     public class ScheduledClassesController : Controller
     {
         private SATEntities db = new SATEntities();
@@ -99,6 +100,7 @@ namespace SATProject.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,6 +116,7 @@ namespace SATProject.UI.MVC.Controllers
         }
 
         // POST: ScheduledClasses/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

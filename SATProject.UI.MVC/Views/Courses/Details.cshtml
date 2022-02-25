@@ -66,8 +66,9 @@
     </div>
     <div class="form-group row text-center">
         <div>
-            @Html.ActionLink("Edit", "Edit",null, new { id = Model.CourseId, @class = "btn btn-secondary" })
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }, new { @class = "btn btn-secondary" })
+
             @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-         </div>
+        </div>
     </div>
 </div>
