@@ -67,7 +67,23 @@ namespace SATProject.DATA.EF//.SATMetadata
 
     public class ScheduledClassMetaData
     {
+        //public int ScheduledClassId { get; set; }
+        public int CourseId { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string InstructorName { get; set; }
+        public string Location { get; set; }
+        public int SCSID { get; set; }
+    }
 
+    [MetadataType(typeof(ScheduledClassMetaData))]
+    public partial class ScheduledClass
+    {
+        [Display(Name = "Class Info")]
+        public string ClassInfo
+        {
+            get { return $"{StartDate} {Course.CourseName} {Location}"; }
+        }
     }
 
     #endregion
@@ -128,8 +144,9 @@ namespace SATProject.DATA.EF//.SATMetadata
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [DisplayFormat(NullDisplayText = "[-N/A-]")]
-        [StringLength(100, ErrorMessage = "* Value must be 100 characters or less.")]
+        
+        [StringLength(133, ErrorMessage = "* Value must be 133 characters or less.")]
+        [Display(Name = "Image")]
         public string PhotoUrl { get; set; }
 
         [Required]

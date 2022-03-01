@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using SAT.UI.MVC.Utilities;
 using SATProject.DATA.EF;
+
 
 namespace SATProject.UI.MVC.Controllers
 {
-    [Authorize(Roles ="Admin, Scheduler")]
+    [Authorize(Roles = "Admin, Scheduler")]
     public class StudentsController : Controller
     {
         private SATEntities db = new SATEntities();
@@ -51,10 +54,30 @@ namespace SATProject.UI.MVC.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,StudentImage,SSID")] Student student, HttpPostedFileBase studentImage)
         {
             if (ModelState.IsValid)
             {
+                string file = "NoImageAvailable.png";
+                if (studentImage != null)
+                {
+                    file = studentImage.FileName;
+                    string ext = file.Substring(file.LastIndexOf('.'));
+                    string[] goodExts = { ".jpeg", ".jpg", ".png", ".gif" };
+                    if (goodExts.Contains(ext.ToLower()) && studentImage.ContentLength <= 4194304)
+                    {
+                        file = Guid.NewGuid() + ext;
+                        string savePath = Server.MapPath("~/Content/StudentImages/");
+                        Image convertedImage = Image.FromStream(studentImage.InputStream);
+                        int maxImageSize = 500;
+                        int maxThumbSize = 100;
+
+                        ImageUtility.ResizeImage(savePath, file, convertedImage, maxImageSize, maxThumbSize);
+
+                    }
+
+                }
+                student.PhotoUrl = file;
                 db.Students.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -87,10 +110,35 @@ namespace SATProject.UI.MVC.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,SSID,StudentImage")] Student student, HttpPostedFileBase studentImage)
         {
             if (ModelState.IsValid)
             {
+                if (studentImage != null)
+                {
+                    string file = studentImage.FileName;
+                    string ext = file.Substring(file.LastIndexOf('.'));
+                    string[] goodExts = { ".jpeg", ".jpg", ".png", ".gif" };
+                    if (goodExts.Contains(ext.ToLower()) && studentImage.ContentLength <= 4194304)
+                    {
+                        file = Guid.NewGuid() + ext;
+                        string savePath = Server.MapPath("~/Content/StudentImages/");
+                        Image convertedImage = Image.FromStream(studentImage.InputStream);
+                        int maxImageSize = 500;
+                        int maxThumbSize = 100;
+
+                        ImageUtility.ResizeImage(savePath, file, convertedImage, maxImageSize, maxThumbSize);
+
+                        if (student.PhotoUrl != null && student.PhotoUrl != "NoImageAvailable.png")
+                        {
+                            string path = Server.MapPath("~/Content/StudentImages/");
+                            ImageUtility.Delete(path, student.PhotoUrl);
+                        }
+
+                        student.PhotoUrl = file;
+                    }
+
+                }
                 db.Entry(student).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -122,6 +170,8 @@ namespace SATProject.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Student student = db.Students.Find(id);
+            string path = Server.MapPath("/Content/StudentImages/");
+            ImageUtility.Delete(path, student.PhotoUrl);
             db.Students.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");

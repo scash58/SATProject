@@ -6,10 +6,11 @@
         @Html.AntiForgeryToken()
 
         <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
             <div class="dropdown-menu fade-down m-0">
-                @Html.ActionLink("Hello Admin"  + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-item dropdown">Log off</a>
+                <a href="@Url.Action("Index", "Manage")" class="dropdown-item">Hello Admin!</a>
+                @*@Html.ActionLink("Hello Admin"  + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+                <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item">Log off</a>
             </div>
 
         </div>
@@ -20,8 +21,10 @@ else
     <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
         <div class="dropdown-menu fade-down m-0">
-            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
-            @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            <a href="@Url.Action("Register", "Account")" class="dropdown-item">Register</a>
+            <a href="@Url.Action("Login", "Account")" class="dropdown-item">Log In</a>
+            @*@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })*@
+            @*@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })*@
         </div>
     </div>
 }

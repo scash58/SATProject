@@ -83,13 +83,13 @@
                     @Html.DisplayFor(model => model.Email)
                 </div>
 
-                <div>
-                    <b> @Html.DisplayNameFor(model => model.PhotoUrl)</b>
-                </div>
+                @*<div>
+                        <b> @Html.DisplayNameFor(model => model.PhotoUrl)</b>
+                    </div>
 
-                <div>
-                    @Html.DisplayFor(model => model.PhotoUrl)
-                </div>
+                    <div>
+                        @Html.DisplayFor(model => model.PhotoUrl)
+                    </div>*@
 
                 <div>
                     <b>@Html.DisplayNameFor(model => model.StudentStatus.SSName)</b>
@@ -98,23 +98,24 @@
                 <div>
                     @Html.DisplayFor(model => model.StudentStatus.SSName)
                 </div>
+                <div>
+                    <img src="~/Content/StudentImages/t_@Model.PhotoUrl" title="@Model.PhotoUrl" alt="@Model.PhotoUrl" />
+                </div>
             </div>
 
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group row text-center">
+                    <div class="p-2">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </div>
+                    <div>
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                    </div>
+
+                </div>
+            }
         </div>
-
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-         <div class="form-group row text-center">
-            <div class="p-2">
-                <input type="submit" value="Delete" class="btn btn-danger" />
-            </div>
-            <div>
-                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-            </div>
-
-        </div>
-        }
     </div>
-</div>

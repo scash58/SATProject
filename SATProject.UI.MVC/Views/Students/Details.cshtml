@@ -83,13 +83,13 @@
                     @Html.DisplayFor(model => model.Email)
                 </div>
 
-                <div>
-                    <b> @Html.DisplayNameFor(model => model.PhotoUrl)</b>
-                </div>
+                @*<div>
+                <b> @Html.DisplayNameFor(model => model.PhotoUrl)</b>
+            </div>
 
-                <div>
-                    @Html.DisplayFor(model => model.PhotoUrl)
-                </div>
+            <div>
+                @Html.DisplayFor(model => model.PhotoUrl)
+            </div>*@
 
                 <div>
                     <b>@Html.DisplayNameFor(model => model.StudentStatus.SSName)</b>
@@ -99,7 +99,9 @@
                     @Html.DisplayFor(model => model.StudentStatus.SSName)
                 </div>
             </div>
-
+            <div class="p-2">
+                <img src="~/Content/StudentImages/@Model.PhotoUrl" />
+            </div>
         </div>
 
         <div class="form-group row text-center">

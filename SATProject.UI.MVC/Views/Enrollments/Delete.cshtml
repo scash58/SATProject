@@ -14,7 +14,7 @@
         <hr />
         <div class="text-center">
             <div>
-                @Html.DisplayNameFor(model => model.EnrollmentDate)
+                <b>@Html.DisplayNameFor(model => model.EnrollmentDate)</b>
             </div>
 
             <div>
@@ -22,19 +22,19 @@
             </div>
 
             <div>
-                @Html.DisplayNameFor(model => model.ScheduledClass.InstructorName)
+                <b> @Html.DisplayNameFor(model => model.ScheduledClass.ClassInfo)</b>
             </div>
 
             <div>
-                @Html.DisplayFor(model => model.ScheduledClass.InstructorName)
+                @Html.DisplayFor(model => model.ScheduledClass.ClassInfo)
             </div>
 
             <div>
-                @Html.DisplayNameFor(model => model.Student.FirstName)
+                <b>@Html.DisplayNameFor(model => model.Student.FullName)</b>
             </div>
 
             <div>
-                @Html.DisplayFor(model => model.Student.FirstName)
+                @Html.DisplayFor(model => model.Student.FullName)
             </div>
 
         </div>

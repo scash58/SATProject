@@ -11,7 +11,7 @@
     </div>
 
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create", "Students", FormMethod.Post, new { @enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 
@@ -98,16 +98,6 @@
                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-            <div class="form-group row">
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-8 p-2">
-                    @Html.EditorFor(model => model.PhotoUrl, new { htmlAttributes = new { @class = "form-control", placeholder = "Photo URL" } })
-                    @Html.ValidationMessageFor(model => model.PhotoUrl, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
             <div class="form-group row">
                 <div class="col-md-2">
                 </div>
@@ -116,13 +106,21 @@
                     @Html.ValidationMessageFor(model => model.SSID, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            <div class="m-4 text-center">
+                <div>
+                    <input type="file" name="StudentImage" />
+                    @Html.ValidationMessageFor(model => model.PhotoUrl, "", new { @class = "text-danger" })
+                </div>
+                @*<div class="p-2">
+                    <img src="~/Content/StudentImages/@Model.PhotoUrl" />
+                </div>*@
+            </div>
             <div class="form-group row text-center">
                 <div class="p-2">
                     <input type="submit" value="Create" class="btn btn-secondary" />
                 </div>
                 <div>
-                    @Html.ActionLink("Back to List", "Index", null, new { @class="btn btn-primary"})
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
                 </div>
             </div>
         </div>
