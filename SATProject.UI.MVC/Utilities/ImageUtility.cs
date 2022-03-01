@@ -90,7 +90,7 @@ namespace SAT.UI.MVC.Utilities
         public static void Delete(string path, string fileName)
         {
             //Skip this action if targeted file is the "default image".
-            if (fileName.ToLower() == "noimageavailable.png")
+            if (fileName.ToLower() == "noimage.png")
             {
                 return;
             }

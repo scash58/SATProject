@@ -54,21 +54,21 @@ namespace SATProject.UI.MVC.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,StudentImage,SSID")] Student student, HttpPostedFileBase studentImage)
+        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student, HttpPostedFileBase photoUrl)
         {
             if (ModelState.IsValid)
             {
-                string file = "NoImageAvailable.png";
-                if (studentImage != null)
+                string file = "NoImage.png";
+                if (photoUrl != null)
                 {
-                    file = studentImage.FileName;
+                    file = photoUrl.FileName;
                     string ext = file.Substring(file.LastIndexOf('.'));
                     string[] goodExts = { ".jpeg", ".jpg", ".png", ".gif" };
-                    if (goodExts.Contains(ext.ToLower()) && studentImage.ContentLength <= 4194304)
+                    if (goodExts.Contains(ext.ToLower()) && photoUrl.ContentLength <= 4194304)
                     {
                         file = Guid.NewGuid() + ext;
                         string savePath = Server.MapPath("~/Content/StudentImages/");
-                        Image convertedImage = Image.FromStream(studentImage.InputStream);
+                        Image convertedImage = Image.FromStream(photoUrl.InputStream);
                         int maxImageSize = 500;
                         int maxThumbSize = 100;
 
@@ -110,26 +110,26 @@ namespace SATProject.UI.MVC.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,SSID,StudentImage")] Student student, HttpPostedFileBase studentImage)
+        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,SSID,PhotoUrl")] Student student, HttpPostedFileBase photoUrl)
         {
             if (ModelState.IsValid)
             {
-                if (studentImage != null)
+                if (photoUrl != null)
                 {
-                    string file = studentImage.FileName;
+                    string file = photoUrl.FileName;
                     string ext = file.Substring(file.LastIndexOf('.'));
                     string[] goodExts = { ".jpeg", ".jpg", ".png", ".gif" };
-                    if (goodExts.Contains(ext.ToLower()) && studentImage.ContentLength <= 4194304)
+                    if (goodExts.Contains(ext.ToLower()) && photoUrl.ContentLength <= 4194304)
                     {
                         file = Guid.NewGuid() + ext;
                         string savePath = Server.MapPath("~/Content/StudentImages/");
-                        Image convertedImage = Image.FromStream(studentImage.InputStream);
+                        Image convertedImage = Image.FromStream(photoUrl.InputStream);
                         int maxImageSize = 500;
                         int maxThumbSize = 100;
 
                         ImageUtility.ResizeImage(savePath, file, convertedImage, maxImageSize, maxThumbSize);
 
-                        if (student.PhotoUrl != null && student.PhotoUrl != "NoImageAvailable.png")
+                        if (student.PhotoUrl != null && student.PhotoUrl != "NoImage.png")
                         {
                             string path = Server.MapPath("~/Content/StudentImages/");
                             ImageUtility.Delete(path, student.PhotoUrl);
