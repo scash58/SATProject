@@ -1,7 +1,7 @@
 ﻿@model SATProject.DATA.EF.Student
 
 @{
-    ViewBag.Title = "Delete " + $"{Model.FullName} ?";
+    ViewBag.Title = $"Change Current/Withdrawel Status for {Model.FullName}?";
 }
 
 <div class="p-2">
@@ -108,8 +108,12 @@
                 @Html.AntiForgeryToken()
 
                 <div class="form-group row text-center">
+                    @if (Model.Enrollments.Count() > 0)
+                    {
+                        <h4 class="mt-5">This student is enrolled a class at this time. Are you sure you want to change status?</h4>
+                    }
                     <div class="p-2">
-                        <input type="submit" value="Delete" class="btn btn-danger" />
+                        <input type="submit" value="Change Status" class="btn btn-danger" />
                     </div>
                     <div>
                         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })

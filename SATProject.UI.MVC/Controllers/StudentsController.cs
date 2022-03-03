@@ -160,6 +160,16 @@ namespace SATProject.UI.MVC.Controllers
             {
                 return HttpNotFound();
             }
+
+            //var activeStudentClasses = from stu in db.Students
+            //                           join enr in db.Enrollments on stu.StudentId equals enr.StudentId
+            //                           join shc in db.ScheduledClasses on enr.ScheduledClassId equals shc.ScheduledClassId
+            //                           join cor in db.Courses on shc.CourseId equals cor.CourseId
+            //                           where cor.IsActive == true
+            //                           group stu by stu.StudentId;
+
+            //ViewBag.ActiveStudentClasses = activeStudentClasses;                 
+
             return View(student);
         }
 
@@ -170,9 +180,18 @@ namespace SATProject.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Student student = db.Students.Find(id);
-            string path = Server.MapPath("/Content/StudentImages/");
-            ImageUtility.Delete(path, student.PhotoUrl);
-            db.Students.Remove(student);
+            if (student.SSID == 2)
+            {
+                student.SSID = 3;
+            }
+            else
+            {
+                student.SSID = 2;
+            }
+
+            //string path = Server.MapPath("/Content/StudentImages/");
+            //ImageUtility.Delete(path, student.PhotoUrl);
+            //db.Students.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

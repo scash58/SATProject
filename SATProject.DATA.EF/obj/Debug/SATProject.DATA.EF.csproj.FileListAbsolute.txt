@@ -22,3 +22,15 @@ C:\Users\Student\Documents\Visual Studio 2017\!CanvasDownloads\13_PMD\SATProject
 C:\Users\Student\Documents\Visual Studio 2017\!CanvasDownloads\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.csproj.CopyComplete
 C:\Users\Student\Documents\Visual Studio 2017\!CanvasDownloads\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.dll
 C:\Users\Student\Documents\Visual Studio 2017\!CanvasDownloads\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.pdb
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\bin\Debug\SATProject.DATA.EF.dll.config
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\bin\Debug\SATProject.DATA.EF.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\bin\Debug\SATProject.DATA.EF.pdb
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\bin\Debug\EntityFramework.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\bin\Debug\EntityFramework.xml
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.csprojAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.csproj.CoreCompileInputs.cache
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.csproj.CopyComplete
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.pdb
