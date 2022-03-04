@@ -432,3 +432,11 @@
     padding-right: 0;
     border-right: none;
 }
+
+#sstiles {
+    background-color: #06BBCC;
+}
+
+    #sstiles a {
+        color: black;
+    }
