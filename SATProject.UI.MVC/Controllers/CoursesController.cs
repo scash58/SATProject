@@ -111,7 +111,8 @@ namespace SATProject.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Courses.Find(id);
-            db.Courses.Remove(course);
+            course.IsActive = !course.IsActive;
+            //db.Courses.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -80,9 +80,22 @@
                     @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
                 </td>
                 <td>
+
                     @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                    @if (item.SSID == 2)
+                    {
+                        @Html.ActionLink("Change Status to Withdrawn", "Delete", new { id = item.StudentId })
+                    }
+                    else if (item.SSID == 3)
+                    {
+                        @Html.ActionLink("Change Status to Current", "Delete", new { id = item.StudentId })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit to change Status", "Edit", new { id = item.StudentId })
+                    }
+
                 </td>
             </tr>
         }
