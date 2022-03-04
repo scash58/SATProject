@@ -57,7 +57,15 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+                    @if (item.IsActive == true)
+                    {
+                        @Html.ActionLink("Retire", "Delete", new { id = item.CourseId })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Activate", "Delete", new { id = item.CourseId })
+                    }
+
                 </td>
             </tr>
         }
