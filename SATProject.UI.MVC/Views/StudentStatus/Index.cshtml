@@ -7,9 +7,17 @@
 <div class="m-2">
     <h2 class="text-center">@ViewBag.Title</h2>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <div>
+        <div class="row col-md-6">
+            @Html.ActionLink("Create New", "Create")
+            <div class="col-md-6 mb-2">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("Tile View", "IndexTiles", "StudentStatus")
+                }
+            </div>
+        </div>
+    </div>
     <table class="table">
         <tr>
             <th>

@@ -21,6 +21,12 @@ namespace SATProject.UI.MVC.Controllers
             return View(db.StudentStatuses.ToList());
         }
 
+        public ActionResult IndexTiles()
+        {
+            var studentStatus = db.StudentStatuses.Include(ss => ss.Students).Include(ss => ss.SSName);
+            return View(db.StudentStatuses.ToList());
+        }
+
         // GET: StudentStatus/Details/5
         public ActionResult Details(int? id)
         {
