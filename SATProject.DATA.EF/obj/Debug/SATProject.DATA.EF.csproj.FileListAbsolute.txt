@@ -34,3 +34,15 @@ C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProj
 C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.csproj.CopyComplete
 C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.dll
 C:\Users\Student\Documents\Visual Studio 2017\Projects\13_PMD\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.pdb
+C:\LiveProj\SATProject\SATProject.DATA.EF\bin\Debug\SATProject.DATA.EF.dll.config
+C:\LiveProj\SATProject\SATProject.DATA.EF\bin\Debug\SATProject.DATA.EF.dll
+C:\LiveProj\SATProject\SATProject.DATA.EF\bin\Debug\SATProject.DATA.EF.pdb
+C:\LiveProj\SATProject\SATProject.DATA.EF\bin\Debug\EntityFramework.dll
+C:\LiveProj\SATProject\SATProject.DATA.EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\LiveProj\SATProject\SATProject.DATA.EF\bin\Debug\EntityFramework.xml
+C:\LiveProj\SATProject\SATProject.DATA.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\LiveProj\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.csprojAssemblyReference.cache
+C:\LiveProj\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.csproj.CoreCompileInputs.cache
+C:\LiveProj\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.csproj.CopyComplete
+C:\LiveProj\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.dll
+C:\LiveProj\SATProject\SATProject.DATA.EF\obj\Debug\SATProject.DATA.EF.pdb
